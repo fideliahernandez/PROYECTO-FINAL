@@ -1,0 +1,69 @@
+/* ========================================= 
+			RESETEO GENERAL
+Aplicamos estas propiedades a todos los elementos de la página
+========================================= */
+* {
+  /* Hace que padding y border formen parte del tamaño total del elemento */
+  box-sizing: border-box;
+
+  /* Eliminamos los márgenes predeterminados del navegador */
+  margin: 0;
+
+  /* Eliminamos los espacios internos predeterminados */
+  padding: 0;
+}
+
+/* ========================================= 
+	CONFIGURACIÓN GENERAL DE LA PÁGINA 
+========================================= */
+/* La página tendrá como mínimo la altura completa de la ventana del navegador */
+/* Definimos las fuentes principales utilizadas por la aplicación */
+/* Color de fondo general */
+/* Color principal del texto */
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+/* ========================================= 
+		CONTENEDOR PRINCIPAL 
+========================================= */
+/* El contenedor ocupará como mínimo toda la altura de la ventana */
+/* Activamos Flexbox para organizar los elementos internos */
+/* Colocamos los elementos verticalmente con flex-direction*/
+/* Centramos horizontalmente los elementos con aling.-items */
+/* Centramos verticalmente los elementos justify-content */
+/* Espacio entre los elementos internos */
+/* Espacio interno del contenedor */
+/* Centramos el contenido de texto */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  padding: 24px;
+
+  text-align: center;
+}
+
+/* ========================================= 
+		TÍTULO PRINCIPAL 	
+========================================= */
+/* Tamaño del título principal */
+.app h1 {
+  font-size: 2rem;
+}
+
+/* ========================================= 
+			PÁRRAFOS 
+========================================= */
+/* Tamaño del texto informativo */
+.app p {
+  font-size: 1rem;
+}
