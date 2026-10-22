@@ -1,0 +1,573 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #f4f6f8;
+
+  color: #1f2937;
+}
+
+/* =========================================
+   AUTENTICACIÓN
+========================================= */
+
+.auth-page {
+  min-height: 100vh;
+
+  padding: 48px 24px;
+}
+
+.auth-header {
+  max-width: 900px;
+
+  margin: 0 auto 32px;
+
+  text-align: center;
+}
+
+.auth-header h1 {
+  margin-bottom: 12px;
+
+  font-size: 2rem;
+}
+
+.auth-header p {
+  margin-bottom: 8px;
+
+  color: #6b7280;
+}
+
+.auth-header span {
+  font-size: 0.9rem;
+
+  color: #6b7280;
+}
+
+.auth-container {
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.auth-card {
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h2 {
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: 2px solid #2563eb;
+
+  border-color: transparent;
+}
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-page {
+    padding: 32px 16px;
+  }
+
+  /* En móvil Mi cuenta pasa de dos columnas a una. */
+  .cuenta-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Titular y estado dejan de estar horizontalmente. */
+  .cuenta-card-header {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   DASHBOARD COMPLETO
+========================================= */
+/* Contenedor general de la página bancaria aqui pueden cambiar el color. */
+.app-dashboard {
+  min-height: 100vh;
+
+  background-color: #f4f6f8;
+}
+
+/* Organiza el nombre del banco y el botón de logout horizontalmente. */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 20px clamp(20px, 5vw, 72px);
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.topbar h1 {
+  margin-bottom: 4px;
+
+  font-size: 1.5rem;
+}
+
+.topbar p {
+  color: #6b7280;
+}
+
+.dashboard-nav {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 14px clamp(20px, 5vw, 72px);
+
+  overflow-x: auto;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-nav a {
+  padding: 9px 14px;
+
+  color: #374151;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav a.active {
+  background-color: #eff6ff;
+
+  color: #1d4ed8;
+}
+
+/* ========================================= 
+	ESTILOS AL CONTENIDO Y BIENVENIDA 
+========================================= */
+.dashboard-content {
+  width: min(1100px, 92%);
+
+  margin: 32px auto;
+
+  display: grid;
+
+  gap: 24px;
+}
+
+.dashboard-welcome {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-label {
+  margin-bottom: 6px;
+
+  color: #2563eb;
+
+  font-weight: 700;
+}
+
+.dashboard-welcome h2 {
+  margin-bottom: 8px;
+
+  font-size: 1.8rem;
+}
+
+.dashboard-welcome p {
+  color: #6b7280;
+}
+
+/* ========================================= 
+	ESTILOS A LAS TARJETAS DE RESUMEN 
+========================================= */
+/* Crea tres columnas para: saldo, cuentas y movimientos. */
+.summary-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding: 24px;
+
+  background-color: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card span {
+  color: #6b7280;
+
+  font-size: 0.9rem;
+}
+
+.summary-card strong {
+  font-size: 1.6rem;
+
+  color: #111827;
+}
+
+/* ========================================= 
+	ESTILOS DE INFORMACIÓN DE CUENTA
+========================================= */
+.dashboard-section {
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  margin-bottom: 22px;
+}
+
+.section-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6b7280;
+
+  font-size: 0.9rem;
+}
+
+/* Distribuye los tres datos principales de la cuenta en columnas iguales. */
+.account-card {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.account-card div {
+  padding: 18px;
+
+  background-color: #f9fafb;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+}
+
+.account-card span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #6b7280;
+
+  font-size: 0.85rem;
+}
+
+.account-card strong {
+  font-size: 1.1rem;
+}
+
+/* ========================================= 
+				RESPONSIVE 
+========================================= */
+@media (max-width: 768px) {
+  /* En pantallas pequeñas las tarjetas dejan de utilizar tres columnas. */
+  .summary-grid,
+  .account-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* La cabecera pasa de horizontal a vertical. */
+  .topbar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   MI CUENTA
+========================================= */
+/* Página general de Mi cuenta. */
+.app-cuenta {
+  min-height: 100vh;
+
+  background-color: #f4f6f8;
+}
+
+/* Limita el ancho del contenido y lo centra horizontalmente. */
+.cuenta-content {
+  width: min(1100px, 92%);
+
+  margin: 32px auto;
+}
+
+/* Divide la página en: izquierda = datos bancarios derecha = configuración. */
+.cuenta-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(0, 1.4fr);
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* Tarjeta principal bancaria. */
+.cuenta-card {
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Organiza titular y badge horizontalmente. */
+.cuenta-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
+.cuenta-card-header h2 {
+  margin-bottom: 5px;
+}
+
+/* Texto secundario del titular. */
+.cuenta-meta {
+  color: #6b7280;
+}
+
+/* Organiza verticalmente los datos bancarios. */
+.cuenta-detalle {
+  display: grid;
+
+  gap: 14px;
+}
+
+.cuenta-detalle p {
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* El último dato no necesita línea divisoria inferior. */
+.cuenta-detalle p:last-child {
+  padding-bottom: 0;
+
+  border-bottom: none;
+}
+
+/* Estilo base del indicador de estado. */
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 10px;
+
+  /* Un valor alto genera el aspecto de cápsula. */
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+}
+
+/* Estado activo. */
+.badge-success {
+  background-color: #dcfce7;
+
+  color: #166534;
+}
+
+/* Estado inactivo. */
+.badge-danger {
+  background-color: #fee2e2;
+
+  color: #991b1b;
+}
+
+/* Organiza las diferentes secciones de configuración. */
+.cuenta-panel {
+  display: grid;
+
+  gap: 24px;
+}
+
+/* Tarjeta reutilizable para cada sección. */
+.cuenta-section {
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.cuenta-section h3 {
+  margin-bottom: 22px;
+}
+
+/* Organiza los controles del formulario. */
+.cuenta-form {
+  display: grid;
+
+  gap: 4px;
+}
+
+/* Reserva espacio para mensajes de error aunque todavía estén vacíos. */
+.field-error {
+  min-height: 18px;
+
+  margin-top: 6px;
+
+  color: #dc2626;
+
+  font-size: 0.85rem;
+}
+
+/* Diferencia visualmente las operaciones destructivas. */
+.cuenta-section-danger {
+  border: 1px solid #fecaca;
+}
+
+.cuenta-section-danger h3 {
+  color: #b91c1c;
+}
+
+.cuenta-warning {
+  margin-bottom: 18px;
+
+  color: #7f1d1d;
+}
+
+/* Botón utilizado para eliminar. */
+.btn-danger {
+  background-color: #dc2626;
+
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}

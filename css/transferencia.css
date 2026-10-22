@@ -1,0 +1,159 @@
+/* =========================================
+   PÁGINA DE TRANSFERENCIAS
+========================================= */
+
+.app-transferencia {
+  min-height: 100vh;
+
+  background-color: #f4f6f8;
+}
+
+.transferencia-content {
+  width: min(1100px, 92%);
+
+  margin: 32px auto;
+}
+
+/* =========================================
+   ENCABEZADO DE OPERACIONES
+========================================= */
+
+.transferencia-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 24px;
+
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.transferencia-header h2 {
+  margin: 6px 0;
+}
+
+.transferencia-header p {
+  color: #6b7280;
+}
+
+/* =========================================
+   SALDO DISPONIBLE
+========================================= */
+
+.saldo-disponible {
+  min-width: 220px;
+
+  padding: 18px;
+
+  background-color: #eff6ff;
+
+  border-radius: 12px;
+}
+
+.saldo-disponible span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #1d4ed8;
+
+  font-size: 0.9rem;
+}
+
+.saldo-disponible strong {
+  font-size: 1.6rem;
+}
+
+/* =========================================
+   FORMULARIOS DE OPERACIONES
+========================================= */
+
+.operaciones-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(280px, 0.8fr);
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+.transferencia-card {
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.transferencia-card h3 {
+  margin-bottom: 22px;
+}
+
+/* Los select reciben una apariencia equivalente a los inputs generales. */
+.form-group select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  background-color: #ffffff;
+
+  font-size: 1rem;
+}
+
+/* Resalta el select que actualmente tiene el foco. */
+.form-group select:focus {
+  outline: 2px solid #2563eb;
+
+  border-color: transparent;
+}
+
+/* Texto explicativo del depósito. */
+.operation-help {
+  margin-bottom: 20px;
+
+  color: #6b7280;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  /* Encabezado vertical en móvil. */
+  .transferencia-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  /* El saldo utiliza todo el ancho disponible. */
+  .saldo-disponible {
+    width: 100%;
+  }
+
+  /* Los formularios pasan a una sola columna. */
+  .operaciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
